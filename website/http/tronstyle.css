@@ -1,17 +1,188 @@
-body {
-	background: transparent;
-    font-family: Sans-Serif;
-    max-width: 100%;
-	margin:0;
-	padding-right: 2px;
+/* css reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video 
+{background-color: #000000; margin: 0; padding: 0; border: 0; color: #ffffff; font-size: 100%; font: inherit; font-family: Sans-serif; vertical-align: baseline;}
 
+/* navigation */
+html {
+  height: 2000px;
+}
+.mobile {
+  display: none;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.mobile div {
+  display: none;
+}
+.mobile button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 0;
+  text-indent: 200%;
+  overflow: hidden;
+  background: #000000 url("menu.svg") center no-repeat;
+  background-size: 80%;
+  width: 58px;
+  height: 20px;
+  outline: none;
+  -webkit-transition: all 400ms ease;
+          transition: all 400ms ease;
+}
+.mobile button.expanded {
+  background-color: transparent;
+  border: 0;
+}
+.mobile a {
+  display: block;
+}
+a {
+  background: #01677e;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #22a0bf;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+a:hover,
+a:active,
+a:focus {
+  background: #3cb0fd;
+}
+.desktop {
+  display: block;
+  overflow: hidden;
+}
+.desktop a {
+  width: 20%;
+  float: left;
+  border-right: 1px solid #22a0bf;
+  box-sizing: border-box;
+  margin-bottom:20px;
+}
+.desktop a:last-child {
+  border-right: none;
 }
 
+@media (max-width: 800px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+}
+	
+/* global */
+h1 {
+	margin-bottom:10px;
+}
+
+h2 {
+	font-size:24px;
+	font-weight:bold;
+	margin-bottom:15px;
+}
+
+.btn {
+  background: #01677e;
+  background-image: -webkit-linear-gradient(top, #01677e, #004a5c);
+  background-image: -moz-linear-gradient(top, #01677e, #004a5c);
+  background-image: -ms-linear-gradient(top, #01677e, #004a5c);
+  background-image: -o-linear-gradient(top, #01677e, #004a5c);
+  background-image: linear-gradient(to bottom, #01677e, #004a5c);
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 10px 15px 10px 15px;
+  border: solid #22a0bf 2px;
+  text-decoration: none;
+  margin-bottom:10px;
+  text-align: center;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+#title-logo img {
+    height: auto;
+    width: 95%;
+	max-width:500px;
+}
+
+label {
+	clear:both;
+	display:block;
+	font-weight:bold;
+}
+
+input.readonly {
+	background-color: #F0F0F0;
+}
+/* too visually busy - not using
+#major-nav, #stats-nav{
+	list-style-type: none;
+	width:100%;
+}
+
+#stats-nav .btn {
+	float:left;
+	min-width:44px;
+	max-width: 32%;
+	margin-right:2%;
+}
+
+#major-nav li {
+	background: url("tron-button-bg.png") repeat-x 0 0;
+	display:block;
+	height:44px;
+	width:200px;
+	padding-bottom:10px;
+}
+
+#major-nav #message {
+	background: url("tron-message.png") no-repeat;
+	padding:10px 0 0 85px;
+	height:44px;
+	font-weight: bold;
+}
+
+#major-nav #location {
+	background: url("tron-location.png") no-repeat;
+	padding:10px 0 0 85px;
+	height:44px;
+	font-weight: bold;
+}
+
+#minor-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+} 
+#minor-nav li {
+    float: left;
+}
+
+*/
+
+
+/* Index */
 #index-page  {
-    font-family: Sans-Serif;
-	margin:5px;
-	 max-width: 700px;
+	max-width: 700px;
 }
+
 
 /* gradient specific stuff */
 .gradient {
@@ -33,14 +204,13 @@ body {
  width:100%;
 }
 /* grayed out stuff */
-#old_text{
-background-color: #F0F0F0;
-}
+
 
 .boxed {
 height: 350px;
 }
 
 #blame {
+color:#fff;
 font-size: small;
 }

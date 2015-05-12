@@ -7,36 +7,27 @@
 </head>
 <body>
 
-    Last requested colors :
+    <label>Last Requested Colors:</label>
     <div class="gradient" id="old_gradient"></div>
 
-    <br> Request a Color (Click to Select):
-    <br>
+    <label>Select Color(s):</label>
     <div class="gradient" id="new_gradient" onclick="gradientclick()"></div>
-    <div>
+    <form>
         <span style="float: left;">
 		<input readonly  style="width:75px" onfocus="mycolor1click()" class="color {hash:true, onImmediateChange:'updateInfo1(this);', pickerClosable:true }" id="myColor1" value="000000">
  		</span>
         <span style="float: right;"> 
   		<input readonly  style="width:75px" onfocus="mycolor2click()" class="color {hash:true, onImmediateChange:'updateInfo2(this);', pickerClosable:true }" id="myColor2" value="000000">
 		</span>
-    </div>
-    <center>
-        <input type="button" value="Request Color" id="sendbutton1" class="button" onclick="submit(this)" />
-    </center>
-    <br> Send a Message (Click to Type):
-    <br>
-    <input class="text_input" type="text" id="new_text" maxlength="160">
-    <br>
-    <center>
-        <input type="button" value="Send Message" id="sendbutton2" class="button" onclick="submit(this)" />
-    </center>
-    <br>Last sent message:
-    <br>
-    <input readonly class="text_input" type="text" id="old_text" value="Loading...">
-    <br>
+		<br style="clear:both;"/>
+    </form>
+<input type="button" value="Send Color Request" id="sendbutton1" class="button btn" onclick="submit(this)" />
 
-    <br>
+    <label>Send Message:</label>
+    <input class="text_input" type="text" id="new_text" maxlength="160">
+    <input type="button" value="Send Message" id="sendbutton2" class="button btn" onclick="submit(this)" />
+    <label>Last sent message:</label>
+    <input readonly class="text_input" type="text" id="old_text" value="Loading...">
     <div id="Blame"></div>
     <script type="text/javascript" src="jscolor/jscolor.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -65,7 +56,7 @@
             var color1 = line[2];
             var color2 = line[3];
 
-            document.getElementById("Blame").innerHTML = "Blame " + String(line[4]) + " on " + CreatedTime;
+            document.getElementById("Blame").innerHTML = "Don't like the current color or message? Blame " + String(line[4]) + " on " + CreatedTime;
 
             if (color1 == "#000000" || color1 == "#000000") {
                 $("#old_gradient").css({
@@ -112,12 +103,12 @@
         var result = Number(data);
 
         if (result > 0) {
-            document.getElementById("sendbutton1").value = "Stop Poking!";
-            document.getElementById("sendbutton2").value = "Stop Poking!";
-            alert("Request ignored, Please slow down");
+            document.getElementById("sendbutton1").value = "Slow down there, eager beaver.";
+            document.getElementById("sendbutton2").value = "Hold on a second!";
+            alert("Request ignored! Please slow down.");
         }
         setTimeout(function() {
-            document.getElementById("sendbutton1").value = "Request Color";
+            document.getElementById("sendbutton1").value = "Send Color Request";
             document.getElementById("sendbutton2").value = "Send Message";
             document.getElementById("sendbutton1").removeAttribute('disabled');
             document.getElementById("sendbutton2").removeAttribute('disabled');
