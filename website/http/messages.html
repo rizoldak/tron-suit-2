@@ -5,30 +5,32 @@
     <title>Tron Suit 2.0</title>
     <link rel="stylesheet" type="text/css" href="tronstyle.css">
 </head>
-<body>
+<body class="main-content">
 
     <label>Last Requested Colors:</label>
     <div class="gradient" id="old_gradient"></div>
-
-    <label>Select Color(s):</label>
-    <div class="gradient" id="new_gradient" onclick="gradientclick()"></div>
     <form>
-        <span style="float: left;">
-		<input readonly  style="width:75px" onfocus="mycolor1click()" class="color {hash:true, onImmediateChange:'updateInfo1(this);', pickerClosable:true }" id="myColor1" value="000000">
- 		</span>
-        <span style="float: right;"> 
-  		<input readonly  style="width:75px" onfocus="mycolor2click()" class="color {hash:true, onImmediateChange:'updateInfo2(this);', pickerClosable:true }" id="myColor2" value="000000">
-		</span>
-		<br style="clear:both;"/>
-    </form>
-<input type="button" value="Send Color Request" id="sendbutton1" class="button btn" onclick="submit(this)" />
+		<label>Select Color(s):</label>
+		<div class="gradient" id="new_gradient" onclick="gradientclick()"></div>
+		<div class="row">
+			<img style="float: left;" src="gradient-arrow.png"/> <img style="float: right;" src="gradient-arrow.png"/>
+		</div>
+		<br/>
+		<div class="row">
+			<input readonly onfocus="mycolor1click()" style="float: left;" class="color {hash:true, onImmediateChange:'updateInfo1(this);', pickerClosable:true }" id="myColor1" value="3cb0fd">
+			<input readonly onfocus="mycolor2click()" style="float: right;" class="color {hash:true, onImmediateChange:'updateInfo2(this);', pickerClosable:true }" id="myColor2" value="004a5c">
+		</div>
+		<input type="button" value="Send Color Request" id="sendbutton1" class="button btn" onclick="submit(this)" />
 
-    <label>Send Message:</label>
-    <input class="text_input" type="text" id="new_text" maxlength="160">
-    <input type="button" value="Send Message" id="sendbutton2" class="button btn" onclick="submit(this)" />
-    <label>Last sent message:</label>
-    <input readonly class="text_input" type="text" id="old_text" value="Loading...">
-    <div id="Blame"></div>
+    </form>
+	<form>
+		<label>Send Message:</label>
+		<input class="text_input" type="text" id="new_text" maxlength="160">
+		<input type="button" value="Send Message" id="sendbutton2" class="button btn" onclick="submit(this)" />
+		<label>Last Sent Message:</label>
+		<input readonly class="text_input readonly" type="text" id="old_text" value="Loading...">
+    </form>
+	<div id="Blame"></div>
     <script type="text/javascript" src="jscolor/jscolor.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script type='text/javascript' src='tinycolor.js'></script>

@@ -4,7 +4,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 /* navigation */
 html {
-  height: 2000px;
 }
 .mobile {
   display: none;
@@ -47,8 +46,8 @@ a {
   font-weight: bold;
 }
 a:hover,
-a:active,
 a:focus {
+a:active,
   background: #3cb0fd;
 }
 .desktop {
@@ -60,12 +59,12 @@ a:focus {
   float: left;
   border-right: 1px solid #22a0bf;
   box-sizing: border-box;
-  margin-bottom:20px;
+  margin-bottom: 20px;
+  padding:10px 0;
 }
 .desktop a:last-child {
   border-right: none;
 }
-
 @media (max-width: 800px) {
   .mobile {
     display: block;
@@ -76,6 +75,11 @@ a:focus {
 }
 	
 /* global */
+
+.main-content {
+	margin:0 10px;
+}
+
 h1 {
 	margin-bottom:10px;
 }
@@ -83,7 +87,12 @@ h1 {
 h2 {
 	font-size:24px;
 	font-weight:bold;
-	margin-bottom:15px;
+	padding:10px 0 15px;
+}
+
+.row {
+	display:block;
+	clear:both;
 }
 
 .btn {
@@ -96,13 +105,13 @@ h2 {
   -webkit-border-radius: 8;
   -moz-border-radius: 8;
   border-radius: 8px;
-  font-family: Arial;
+  font-family: Sans-serif;
   color: #ffffff;
   font-size: 14px;
   padding: 10px 15px 10px 15px;
   border: solid #22a0bf 2px;
   text-decoration: none;
-  margin-bottom:10px;
+  margin:10px 0 20px;
   text-align: center;
 }
 
@@ -118,18 +127,23 @@ h2 {
 
 #title-logo img {
     height: auto;
-    width: 95%;
+    width: 85%;
 	max-width:500px;
+	margin:0 auto;
+	display:block;
 }
 
 label {
 	clear:both;
 	display:block;
 	font-weight:bold;
+	margin:15px 0 5px;
 }
 
 input.readonly {
-	background-color: #F0F0F0;
+	background-color: #000000;
+	border:0px;
+	color: #fff; 
 }
 /* too visually busy - not using
 #major-nav, #stats-nav{
@@ -183,28 +197,34 @@ input.readonly {
 	max-width: 700px;
 }
 
+/* Messaging */
+#myColor1, #myColor2 {
+	display:inline;
+}
 
 /* gradient specific stuff */
 .gradient {
     height: 10px;
     background: linear-gradient(to right, rgba(0,0, 0,0), rgba(0,0, 0,0));
 }
+
+#gradient-arrows img{
+	display:inline-block;
+	padding-bottom:10px;
+	}
+
 /* box outline */
 .gradient, .boxed  {
     border-style: solid;
     border-width: 1px;
-    border-color: black;
+    border-color: white;
 }
-/* std button */
-.button {
-    width: 100px;
-}
+
 /* width of stuff */
 .gradient,.boxed,.text_input{
  width:100%;
 }
 /* grayed out stuff */
-
 
 .boxed {
 height: 350px;
